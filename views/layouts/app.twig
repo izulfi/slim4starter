@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.nav-active {
+			font-weight: 700;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<a href="{{ url_for('home') }}" class="{{ is_current_url('home') ? 'nav-active' : ''}}">Home</a>
+		</li>
+		<li>
+			<a href="{{ url_for('about') }}" class="{{ is_current_url('about') ? 'nav-active' : ''}}">About</a>
+		</li>
+		<li>
+			<a href="{{ url_for('contact') }}" class="{{ is_current_url('contact') ? 'nav-active' : ''}}">Contact</a>
+		</li>
+	</ul>
+	{% block content %}{% endblock %}
+</body>
+</html>

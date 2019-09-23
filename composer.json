@@ -1,0 +1,15 @@
+{
+    "name": "zulfi/isdock_slim4",
+    "authors": [
+        {
+            "name": "Zulfi Ismailov-Demiri",
+            "email": "developer@isdock.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "4.0.0",
+        "slim/psr7": "^0.3.0",
+        "php-di/php-di": "^6.0",
+        "slim/twig-view": "3.0.0-alpha"
+    }
+}

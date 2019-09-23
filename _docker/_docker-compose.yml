@@ -1,0 +1,22 @@
+version: '3'
+services:
+  website:
+    image: webdevops/php-nginx-dev:7.2
+    restart: always
+    volumes:
+      - ./:/app:cached
+      - ./isdock_s4.conf:/etc/nginx/conf.d/isdock_s4.conf
+    ports:
+      - 15007:80
+    links:
+      - isdock_s4
+    environment:
+      - "DB_PORT=3306"
+      - "DB_HOST=isdock_s4"
+  isdock_s4:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: dev
+    ports:
+      - 30007:3306
